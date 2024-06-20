@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NavbarRoutingModule } from './navbar-routing.module';
 import { NavbarComponent } from './navbar.component';
-import { ClockModule } from '../../utilities/clock/clock.module';
-
-
+import { MiniBarModule } from '../mini-bar/mini-bar.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +12,7 @@ import { ClockModule } from '../../utilities/clock/clock.module';
   imports: [
     CommonModule,
     NavbarRoutingModule,
-    ClockModule
+    MiniBarModule // gregado
   ],
   exports:[ // hacer visible
     NavbarComponent

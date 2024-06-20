@@ -1,11 +1,8 @@
 <div class="navbar">
-  <div>
-    <span [routerLink]="'/home'">Home</span>
+  <div style="background-color: black; padding: 1em;">
+    <span [routerLink]="'/home'" >Home</span>
   </div>
   <div style="display: flex; gap: 1em; flex-wrap: wrap;">
-    <div style="margin: 0 2em;">
-      <app-clock></app-clock>
-    </div>
     <p [routerLink]="'/dashboard'">Administrador</p>
     <p [routerLink]="'/contact'">Contacto</p>
     <p [routerLink]="'/randomizer'">Randomizador</p>
@@ -15,3 +12,5 @@
     <p [routerLink]="'/routinizer'">Rutinizador</p>
   </div>
 </div>
+
+<app-mini-bar></app-mini-bar>

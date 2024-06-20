@@ -3,7 +3,15 @@
   justify-content: space-between;
   background-color: rgb(255, 35, 145);
   color: white;
-  height: 5vh;
+  height: fit-content;
   align-items: center;
   padding: 0 10%;
+  flex-direction: column;
+}
+
+@media (width > 480px) {
+  .navbar {
+    height: 5vh;
+    flex-direction: row;
+  }
 }
