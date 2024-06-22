@@ -10,25 +10,161 @@
       </div>
 
       <div>
-        <form action="" style="display: flex; flex-direction: column; gap: 1em;">
-          <label for="">primer campo
-            <input type="text">
-          </label>
-          <label for="">segundo campo
-            <input type="text">
-          </label>
-          <label for="">tercer campo
-            <input type="text">
-          </label>
-          <label for="">cuarto campo
-            <input type="text">
-          </label>
-        </form>
+        <h3>Form control</h3>
+        <label for="">field 2 (Suscribed)
+          <input type="text" [formControl]="field2">
+          <p>{{ field2.value }}</p>
+        </label>
+        <p>
+          <strong *ngIf="field2.touched && field2.hasError('maxlength')">Maximo 10 caracteres permitidos.</strong>
+        </p>
+
+        <label for="">field 1
+          <input type="text" [formControl]="field1">
+          <p>
+            {{ field1.value }}
+            {{ field1.valid }}
+          </p>
+        </label>
+        <p>
+          <strong *ngIf="field1.touched && field1.hasError('required')">Este campo es requerido.</strong>
+        </p>
+
+        Pendiente integracion y validaciones con CSS (ponerle color)
+
+        <div style="display: flex; justify-content: space-between; padding: 0 3em; margin: 1em;">
+          <button style="padding: 0.5em 1em; border-radius: 0 2em 2em 2em; cursor: pointer;" [disabled]="field1.invalid"
+            (click)="getNameFieldByFormControlSimple()">nameField</button>
+          <button style="padding: 0.5em 1em; border-radius: 0 2em 2em 2em; cursor: pointer;">No hace nada</button>
+        </div>
+      </div>
+
+      <hr style="margin: 1em 0;">
+
+      <div>
+        <h3>Mas inputs</h3>
+        <label for="">Nombre:
+          <input type="text" [formControl]="nameField">
+          <p>{{ nameField.value }}</p>
+        </label>
+        <label for="">Email:
+          <input type="email" [formControl]="emailField">
+          <p>{{ emailField.value }}</p>
+        </label>
+        <label for="">Telephone:
+          <input type="tel" [formControl]="telField">
+          <p>{{ telField.value }}</p>
+        </label>
+        <label for="">Color:
+          <input type="color" [formControl]="colorField">
+          <p>{{ colorField.value }}</p>
+        </label>
+        <label for="">Date:
+          <input type="date" [formControl]="dateField">
+          <p>{{ dateField.value }}</p>
+        </label>
+        <label for="">Age:
+          <input type="number" [formControl]="ageField">
+          <p>{{ ageField.value }}</p>
+        </label>
+      </div>
+
+      <hr style="margin: 1em 0;">
+
+      <div>
+        <h3>Select</h3>
+        <p>
+          Un selector con opciones y una seleccion
+        </p>
+        <select [formControl]="categoryField">
+          <option value="category-1" name="" id="">category 1</option>
+          <option value="category-2" name="" id="">category 2</option>
+          <option value="category-3" name="" id="">category 3</option>
+          <option value="category-4" name="" id="">category 4</option>
+        </select>
+        <p>
+          Category: {{categoryField.value}}
+        </p>
+        <p>
+          Un selector con multiples opciones y varias selecciones (usar shift)
+        </p>
+        <select [formControl]="tagField" multiple>
+          <option value="tag-1" name="" id="">tag 1</option>
+          <option value="tag-2" name="" id="">tag 2</option>
+          <option value="tag-3" name="" id="">tag 3</option>
+          <option value="tag-4" name="" id="">tag 4</option>
+        </select>
+        <p>
+          Tag: {{tagField.value}}
+        </p>
+      </div>
+
+      <hr style="margin: 1em 0;">
+
+      <div>
+        <h3>Checkbox</h3>
+        <label for="" style="justify-content: space-around;">
+          <p>
+            Agree: {{ agreeField.value }}
+          </p>
+          <input type="checkbox" [formControl]="agreeField">
+        </label>
+      </div>
+
+      <hr style="margin: 1em 0;">
+
+      <div style="width: auto;">
+        <h3>Radio 1</h3>
+        <p>
+          Gender: {{genderField.value}}
+        </p>
+        <label for="" style="justify-content: start;">
+          <input name="gender" type="radio" value="male" [formControl]="genderField">
+          Male
+        </label>
+        <label for="" style="justify-content: start;">
+          <input name="gender" type="radio" value="female" [formControl]="genderField">
+          Female
+        </label>
+        <label for="" style="justify-content: start;">
+          <input name="gender" type="radio" value="noanswer" [formControl]="genderField">
+          No answer
+        </label>
+        <label for="" style="justify-content: start;">
+          <input name="gender" type="radio" value="other" [formControl]="genderField">
+          Other
+        </label>
+        <h3>Radio 2 (con name para que no se confundan las selecciones)</h3>
+        <p>
+          Zona: {{zoneField.value}}
+        </p>
+        <label for="" style="justify-content: start;">
+          <input name="zone" type="radio" value="zone-1" [formControl]="zoneField">
+          Zone 1
+        </label>
+        <label for="" style="justify-content: start;">
+          <input name="zone" type="radio" value="zone-2" [formControl]="zoneField">
+          Zone 2
+        </label>
+        <label for="" style="justify-content: start;">
+          <input name="zone" type="radio" value="zone-3" [formControl]="zoneField">
+          Zone 3
+        </label>
       </div>
 
     </div>
-    
+
+    <div style="display: flex; justify-content: space-between; padding: 0 3em; margin: 1em;">
+      <button style="padding: 0.5em 1em; border-radius: 0 2em 2em 2em; cursor: pointer;">Cancelar</button>
+      <button style="padding: 0.5em 1em; border-radius: 0 2em 2em 2em; cursor: pointer;">Enviar</button>
+    </div>
+
+    <p style="color: red;">
+      <a href="https://platzi.com/new-home/clases/2027-angular-forms/32580-usando-formgroup-para-agrupar-multiples-campos/">FALTA!!! Usando FormGroup para agrupar multiples campos</a>
+
+    </p>
   </main>
 
   <app-footer></app-footer>
+  
 </div>

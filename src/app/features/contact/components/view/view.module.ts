@@ -6,6 +6,7 @@ import { ViewComponent } from './view.component';
 import { NavbarModule } from 'src/app/shared/components/general/navbar/navbar.module';
 import { FooterModule } from 'src/app/shared/components/general/footer/footer.module';
 import { DialogModule } from 'src/app/shared/components/utilities/dialog/dialog.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { DialogModule } from 'src/app/shared/components/utilities/dialog/dialog.
     NavbarModule, // agregado
     FooterModule, // agregado
     DialogModule, // agregado
+    ReactiveFormsModule,
   ]
 })
 export class ViewModule { }
