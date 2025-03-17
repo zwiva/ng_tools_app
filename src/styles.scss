@@ -4,22 +4,29 @@
   margin: 0;
   padding: 0;
 }
+
 .page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100dvh;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   flex-wrap: wrap;
-  align-content: center;
   align-self: center;
   gap: 2em;
   width: 90%;
   margin: 1em;
+  max-width: 1280px;
 }

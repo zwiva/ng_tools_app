@@ -7,7 +7,7 @@ import { NavbarModule } from 'src/app/shared/components/general/navbar/navbar.mo
 import { FooterModule } from 'src/app/shared/components/general/footer/footer.module';
 import { DialogModule } from 'src/app/shared/components/utilities/dialog/dialog.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MiniBarModule } from 'src/app/shared/components/general/mini-bar/mini-bar.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterModule, // agregado
     DialogModule, // agregado
     ReactiveFormsModule,
+    MiniBarModule
   ]
 })
 export class ViewModule { }

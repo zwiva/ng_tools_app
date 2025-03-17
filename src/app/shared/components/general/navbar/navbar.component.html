@@ -1,16 +1,16 @@
 <div class="navbar">
-  <div style="background-color: black; padding: 1em;">
-    <span [routerLink]="'/home'" >Home</span>
-  </div>
-  <div style="display: flex; gap: 1em; flex-wrap: wrap;">
-    <p [routerLink]="'/dashboard'">Administrador</p>
-    <p [routerLink]="'/contact'">Contacto</p>
-    <p [routerLink]="'/randomizer'">Randomizador</p>
-    <p [routerLink]="'/priorizer'">Priorizador</p>
-    <p [routerLink]="'/chronomizer'">Cronomizador</p>
-    <p [routerLink]="'/temporizer'">Temporizador</p>
-    <p [routerLink]="'/routinizer'">Rutinizador</p>
+  <div class="navbar__content">
+    <div style="display: flex; gap: 1em; flex-wrap: wrap; padding: 1em;">
+      <p [routerLink]="'/dashboard'">Administrador</p>
+      <p [routerLink]="'/contact'">Contacto</p>
+      <p [routerLink]="'/randomizer'">Randomizador</p>
+      <p [routerLink]="'/priorizer'">Priorizador</p>
+      <p [routerLink]="'/chronomizer'">Cronomizador</p>
+      <p [routerLink]="'/temporizer'">Temporizador</p>
+      <p [routerLink]="'/routinizer'">Rutinizador</p>
+    </div>
+    <div style="background-color: black; padding: 1em;">
+      <span [routerLink]="'/home'">Home</span>
+    </div>
   </div>
 </div>
-
-<app-mini-bar></app-mini-bar>
